@@ -1,0 +1,66 @@
+---
+layout: default
+---
+<!-- this is the ebook page ---------------------------->
+
+{% assign ebooks = site.products_ebook %}
+{% assign featuredEbooks = ebooks | where:'featured','true'%}
+{% assign presets = site.products_preset %}
+{% assign featuredPresets = presets | where:'featured','true'%}
+
+
+<section class="grid grid-cols-2 ">
+
+    {% for item in featuredEbooks limit:1 %}
+
+    <div class="p-2 bg-cover bg-center p-8">
+        <img src="{{item.featured-image}}"></img>
+    </div>
+
+    <div class="">
+        <h1> {{item.title}}</h1>
+        <h2 class="text-center pb-4 text-2xl"> INTRO/SALES PITCH: ebook </h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+        
+    </div>
+    {% endfor %}
+</section>
+<!-- most popular ebooks ------------------------------------->
+
+
+<section class="grid grid-cols-3 p-8 gap-6">
+{% for item in featuredEbooks limit:9%}
+
+    <div>
+        <img src="{{item.featured-image}}"></img>
+        <h2 class="text xl"> {{item.title}}</h2>
+        <p> {{item.price}}</p>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- sneak  peak ------------------------------------->
+
+
+
+
+
+<!-- testimonials ------------------------------------->
+
+<section class= "py-36 text-center">
+    <div>
+        <h1 class= "text-2xl pb-8"> Love from our Clients! </h1>
+        {% assign testimonial = site.data.testimonials | where:'product-type','preset'%}
+        {% for item in testimonial limit: 1 %}
+
+        <p class="text-xl"> {{item.quote}}</p>
+        <h3> {{item.author}}</h3>
+
+        {% endfor %}
+    </div>
+</section>
+
+
+<!-- FAQ  Section------------------------------------->
+

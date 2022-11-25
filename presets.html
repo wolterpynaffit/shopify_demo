@@ -1,0 +1,92 @@
+---
+layout: default
+---
+<!-- this is the presets page -->
+
+
+{% assign ebooks = site.products_ebook %}
+{% assign featuredEbooks = ebooks | where:'featured','true'%}
+{% assign presets = site.products_preset %}
+{% assign featuredPresets = presets | where:'featured','true'%}
+
+
+<section class="grid grid-cols-2 p-8">
+
+    {% for item in featuredEbooks limit:1 %}
+
+    <div class="p-2 bg-cover bg-center p-8">
+        <img src="{{item.featured-image}}"></img>
+    </div>
+
+    <div class="grid-col-1">
+        <h1> {{item.title}}</h1>
+        <h2 class="text-center pb-4 text-2xl">  INTRO/SALES PITCH: presets </h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+        
+    </div>
+    {% endfor %}
+</section>
+
+
+
+<!-- most popular presets -->
+
+
+
+<section class="grid grid-cols-3 p-8 gap-6">
+    {% for item in featuredPresets limit:9%}
+    
+        <div>
+            <img src="{{item.featured-image}}"></img>
+            <h2 class="text xl"> {{item.title}}</h2>
+            <p> {{item.price}}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+<!-- this is the before and after gallery --------->
+
+
+<section class="grid grid-cols-3 p-8 gap-6">
+    <div>
+        {% for item in featuredPresets limit:9%}
+        <a href="#" class="text xl"> {{item.title}} </a>
+        {% endfor %}
+    </div>
+    <div>
+        {% for item in featuredPresets limit:9%}
+        <img src="{{item.bw-image}}"></img>
+        {% endfor %}
+    </div>
+    <div>
+        {% for item in featuredPresets limit:9%}
+        <img src="{{item.color-image}}"></img>
+        {% endfor %}
+    </div>
+    
+        
+            
+            
+        
+    </section>
+
+
+
+
+<!-- testimonials -->
+
+<section class= "py-36 text-center">
+    <div>
+        <h1 class= "pb-8 text-2xl"> Love from our Clients! </h1>
+        {% assign testimonial = site.data.testimonials | where:'product-type','preset'%}
+        {% for item in testimonial limit: 1 %}
+
+        <p class="text-xl"> {{item.quote}}</p>
+        <h3> {{item.author}}</h3>
+
+        {% endfor %}
+    </div>
+</section>
+
+

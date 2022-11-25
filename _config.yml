@@ -1,0 +1,5 @@
+collections:
+  products_preset:
+    output: true
+  products_ebook:
+    output: true
