@@ -1,8 +1,6 @@
 ---
 layout: default
-youtube-id: UK23kO7cMeo
 ---
-<!-- this is the presets page -->
 
 
 {% assign ebooks = site.products_ebook %}
@@ -11,17 +9,17 @@ youtube-id: UK23kO7cMeo
 {% assign featuredPresets = presets | where:'featured','true'%}
 
 
-<section class="grid grid-cols-2 gap-4 p-4 bg-stone-200 text-neutral-700">
+<section class="grid grid-cols-2 p-8">
 
     {% for item in featuredEbooks limit:1 %}
 
-    <div class="bg-cover bg-center">
+    <div class="p-2 bg-cover bg-center p-8">
         <img src="{{item.featured-image}}"></img>
     </div>
 
     <div class="grid-col-1">
         <h1> {{item.title}}</h1>
-        <h2 class="text-center text-2xl">  INTRO/SALES PITCH: presets </h2>
+        <h2 class="text-center pb-4 text-2xl"> INDIVIDUAL PRESETS TITLE AND DESCRIPTION </h2>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
         
@@ -29,40 +27,22 @@ youtube-id: UK23kO7cMeo
     {% endfor %}
 </section>
 
-
-
-<!-- most popular presets -->
-
-
-
-<section class="p-36 gap-6 text-center">
-
-    <h2> Most Popular Presets</h2>
-    {% for item in featuredPresets limit:9%}
-        <div class="grid grid-cols-3">
-            <img src="{{item.featured-image}}"></img>
-            <h2 class="text xl"> {{item.title}}</h2>
-            <p> {{item.price}}</p>
-        </div>
-        {% endfor %}
-    </section>
-
 <!-- this is the before and after gallery --------->
 
 
-<section class="grid grid-cols-3 p-36 gap-6">
+<section class="grid grid-cols-3 p-8 gap-6">
     <div>
-        {% for item in featuredPresets limit:3 %}
+        {% for item in featuredPresets limit:4%}
         <a href="#" class="text xl"> {{item.title}} </a>
         {% endfor %}
     </div>
     <div>
-        {% for item in featuredPresets limit:3 %}
+        {% for item in featuredPresets limit:4%}
         <img src="{{item.bw-image}}"></img>
         {% endfor %}
     </div>
     <div>
-        {% for item in featuredPresets limit:3 %}
+        {% for item in featuredPresets limit:4%}
         <img src="{{item.color-image}}"></img>
         {% endfor %}
     </div>     
@@ -71,22 +51,18 @@ youtube-id: UK23kO7cMeo
 
 <!-- this is a video showing how to use presets -->
 
-<section class="relative flex place-content-center">
+<section class="p-8">
     <div class="plyr__video-embed" id="player">
-        <iframe width="1000" height="600"
+        <iframe
         src="https://www.youtube.com/embed/{{ page.youtube-id }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"allowfullscreenallowtransparency
         allow="autoplay">
         </iframe>
     </div>
 </section>
 
-
-
-<!-- testimonials -->
-
 <section class= "py-36 text-center">
     <div>
-        <h1 class= "pb-8 text-2xl"> Love from our Clients! </h1>
+        <h1 class= "pb-8 text-2xl"> THIS IS THE TESTIMONIAL SLIDER TEMPORARY! </h1>
         {% assign testimonial = site.data.testimonials | where: 'product-type', 'preset' %}
         
         {% for item in testimonial limit: 1 %}
@@ -101,47 +77,75 @@ youtube-id: UK23kO7cMeo
 
 
 
-    
-
-<!--  PRESET FAQ loop --------------->
-<!-- 
-<section class="p-5p text-center">
-    <h3 class=""> Frequently asked questions</h3>
-{% assign faq = site.data.faqs %}
-{% assign presetFaqs = faqs | where: 'type', 'preset'%}
-
-<h2> Preset FAQs</h2>
-
-{% for item in presetFaqs %}
-
-<div>
-    <h3> {{item.question}} </h3>
-    <p> {{item.answer}}</p>
-</div>
-
-{% endfor %}
-
-</section> -->
-
-
+<!-- THIS IS THE FAQ SECTION FOR PRESETS -->
 <section class="p-5p text-center bg-sky-200">
     <h3 class="p-8 text-xl "> Frequently asked questions</h3>
 {% assign faq = site.data.faqs | where: 'type', 'preset'%}
 {% assign presetFaqs = faqs %}
 
-<h2 class="p-2 border-2 grid-cols-12"> PRESET FAQs</h2>
+<h2 class="p-2 border-2 grid-cols-12"> PRESETS FAQs</h2>
 
-    {% for item in faq %}
+{% for item in faq %}
 
-    <div class="bg-sky-200 hover:bg-cyan-600">
-        <h3 class="p-8 "> Question: {{item.question}} </h3>
-        <p class="p-8 "> Answer: {{item.answer}}</p>
+<div class="bg-sky-200 hover:bg-cyan-600">
+    <h3 class="p-8 "> Question: {{item.question}} </h3>
+    <p class="p-8 "> Answer: {{item.answer}}</p>
+</div>
+
+{% endfor %}
+
+</section>
+
+
+
+<!-- this is the shop page -->
+
+{% assign presets = site.products_preset %}
+{% assign featuredPresets = presets | where:'featured','true'%}
+
+<!-- most popular presets -->
+
+
+<section class="grid grid-cols-3 p-16 gap-6">
+{% for item in featuredPresets offset:1 limit:3 %}
+
+    <div>
+        <img src="{{item.featured-image}}"></img>
+        <h2 class="text-xl text-center"> {{item.title}}</h2>
     </div>
-
     {% endfor %}
+</section>
 
-    </section>
 
+
+
+<section>
+	
+	<div>
+		
+		{% assign pageCategory = page.categories[0] %}
+
+{{pageCategory}}
+
+		{% assign relevant = site.categories[pageCategory] | where_exp:"post","post.url != page.url" %}
+
+        {{pageCategory}}
+
+	<div class="grid grid-cols-3">
+  		{% for post in relevant limit:3 %}
+		
+      		<a href="{{post.url}}">
+        		<div class="bg-image aspect-square" style="background-image:url({{post.img}})"> </div>
+        		<span class="author">by {{post.author}}</span> //
+        		<span class="author"> {{post.date | date: "%m.%d.%Y" }} </span>
+        		<h3> {{post.title}} </h3>
+      		</a>
+      		
+  		{% endfor %}
+		</div>	
+	</div>
+
+</section>
 
 
 

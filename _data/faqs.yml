@@ -1,0 +1,33 @@
+- type: general
+  question:
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, 
+  answer: 
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, deserunt nemo deleniti fuga vero ratione aliquam sapiente totam? Fugit a, dolorem dignissimos tenetur illum doloribus consectetur autem!
+- type: general
+  question:
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, 
+  answer: 
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, deserunt nemo deleniti fuga vero ratione aliquam sapiente totam? Fugit a, dolorem dignissimos tenetur illum doloribus consectetur autem! 
+- type: preset
+  question:
+    What is the best preset to use? 
+  answer: 
+    THIS IS THE FIRST ANSWER
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, deserunt nemo deleniti fuga vero ratione aliquam sapiente totam? Fugit a, dolorem dignissimos tenetur illum doloribus consectetur autem!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique 
+- type: preset
+  question:
+    What package is good for wedding photography?
+  answer: 
+    THIS IS THE SECOND ANSWER
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, 
+- type: ebook
+  question:
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, 
+  answer: 
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, deserunt nemo deleniti fuga vero ratione aliquam sapiente totam? Fugit a, dolorem dignissimos tenetur illum doloribus consectetur autem!
+- type: ebook
+  question:
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, 
+  answer: 
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quasi similique voluptatibus, deserunt nemo deleniti fuga vero ratione aliquam sapiente totam? Fugit a, dolorem dignissimos tenetur illum doloribus consectetur autem! 

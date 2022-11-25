@@ -64,3 +64,21 @@ layout: default
 
 <!-- FAQ  Section------------------------------------->
 
+<section class="p-5p text-center bg-sky-200">
+    <h3 class="p-8 text-xl "> Frequently asked questions</h3>
+{% assign faq = site.data.faqs | where: 'type', 'ebook'%}
+{% assign presetFaqs = faqs %}
+
+<h2 class="p-2 border-2 grid-cols-12"> EBOOK FAQs</h2>
+
+{% for item in faq %}
+
+<div class="bg-sky-200 hover:bg-cyan-600">
+    <h3 class="p-8 "> Question: {{item.question}} </h3>
+    <p class="p-8 "> Answer: {{item.answer}}</p>
+</div>
+
+{% endfor %}
+
+</section>
+
