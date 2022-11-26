@@ -5,23 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,500;1,700&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">    
+   
+
     <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
     <title>{{page.title}}</title>
-   
+    
+
 
 
 </head>
 
 <body>
-    
-    <header class= "flex border-8 text-center p-[5px] py-16 ">
-        <!-- this is where we will have an includes to link the header information  -->
 
-        <h1 class="uppercase text-7xl tracking-wider"> logo</h1>
-        <nav>
-            <a href="#" class="p-8"> Shop</a>
-            <a href="#" class="p-8"> Home </a>
-            <a href="#" class="p-8"> About</a>
+    <!-- this is where we will have an includes to link the header information  -->
+    
+    <header class= "flex grid grid-cols-1  text-center ">
+        <a href="/shop.html" class="font-marker uppercase tracking-wider text-7xl py-32 text-cyan-900 hover:text-cyan-600">LGM</a>
+        <nav class="p-4  border-y-2 font-featured">
+            <a href="/shop" class="p-8 m-8  hover:text-cyan-600"> Home </a>
+            <a href="/presets.html" class="p-8 m-8  hover:text-cyan-600"> Presets</a>
+            <a href="/ebook.html" class="p-8 m-8  hover:text-cyan-600"> Ebooks </a>
+            <a href="#" class="p-8 m-8  hover:text-cyan-600"> About</a>
         </nav>
 
     </header>
@@ -29,17 +40,20 @@
     <!-- this content is getting pulled from ebook.html, presets.html  -->
         {{content}}
    
-    <footer>
-     <!-- this is where we will have an includes to link the header information  -->
-    
-     <h1 class="uppercase text-7xl "> logo</h1>
-     <nav>
-         <a href="#" class="p-8"> Shop</a>
-         <a href="#" class="p-8"> Home </a>
-         <a href="#" class="p-8"> About</a>
-     </nav>
+
+    <!-- FOOTER: this is where we will have an includes to link the header information  -->
+    <footer class="grid grid-cols-2 p-16 border-t-2 border-stone-400" >
+     <h1 class="self-center uppercase tracking-wider p-12 text-7xl flex align-center text-cyan-900"> logo</h1>
+     <nav class="p-4 font-featured self-center">
+        <a href="/shop" class="p-8 m-8  hover:text-cyan-600"> Home </a>
+        <a href="/presets.html" class="p-8 m-8  hover:text-cyan-600"> Presets</a>
+        <a href="/ebook.html" class="p-8 m-8  hover:text-cyan-600"> Ebooks </a>
+        <a href="#" class="p-8 m-8  hover:text-cyan-600"> About</a>
+    </nav>
 
     </footer>
+    <!-- FOOTER END  -->
+
         <script>
         var MemberSpace = window.MemberSpace || {"subdomain":"cloudvent2"};
         (function(d){
@@ -49,6 +63,9 @@
           e.parentNode.insertBefore(s,e);
         }(document));
         </script>
+
+<!-- links javascript js for accordian function etc.  -->
+        <script src="/main.js"></script>
 </body>
 
 </html>

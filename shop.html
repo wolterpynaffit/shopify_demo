@@ -9,38 +9,46 @@ layout: default
 {% assign featuredPresets = presets | where:'featured','true'%}
 
 
+<!-- SHOP PAGE: FEATURED EBOOKS ------------>
 
-<section class="grid grid-cols-2 p-8">
+<section class="grid grid-cols-2 min-h-80vh pt-36">
 
     {% for item in featuredEbooks limit:1 %}
 
-    <div class="p-2 bg-cover bg-center p-8">
+    <div class="bg-cover bg-center p-8 flex inline-flex">
         <img src="{{item.featured-image}}"></img>
     </div>
 
-    <div class="grid-col-1">
-        <h1> {{item.title}}</h1>
-        <h2> THIS IS THE FEATURED EBOOK </h2>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+    <div class="p-8 self-center">
+        <h2 class="pb-8 text-center text-cyan-900 font-marker text-2xl"> THIS IS THE FEATURED PRESET </h2>
+        <div class="font-featured p-8">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+        </div>
+
         
     </div>
     {% endfor %}
 </section>
+
 <!-- most popular ebooks -->
 
 
-<section class="grid grid-cols-3 p-16 gap-6">
+<section class="grid grid-cols-3  gap-20 bg-cyan-800 h-64">
 {% for item in featuredEbooks offset:1 limit:3 %}
 
-    <div>
+    <div class="text-blue-50">
         <img src="{{item.featured-image}}"></img>
-        <h2 class="text xl"> {{item.title}}</h2>
-        <p> {{item.price}}</p>
+        <div class="text-center p-4">
+            <h2 class="text-xl uppercase font-marker"> {{item.title}}</h2>
+            <p class="font-featured"> {{item.price}}</p>
+        </div>
+     
     </div>
     {% endfor %}
 </section>
 
+ 
 
 
 
@@ -48,29 +56,34 @@ layout: default
 
 
 
-<section class="grid grid-cols-3  gap-6">
-{% for item in featuredPresets limit:3 %}
-    <div class="flex inline-flex">
+<section class="grid grid-cols-3 gap-6  bg-cyan-800 text-blue-50 ">
+{% for item in featuredPresets offset:1 limit:3 %}
+    <div>
         <img src="{{item.featured-image}}"></img>
-        <h3> {{ item.title}} </h3>
-        <p> {{item.price}}</p>
+        <div class="text-center uppercase p-4">
+            <h3> {{ item.title}} </h3>
+            <p class="font-featured"> {{item.price}}</p>
+        </div>
     </div>
 {% endfor %}
 </section>
 
 
+    
+    
 
 
 <!-- testimonials -->
 
-<section class= "py-36 text-center">
+<section class= "p-36 text-center">
     <div>
-        <h1 class= "pb-8 text-2xl"> Love from our Clients! </h1>
+        <h1 class= "pb-8 text-2xl text-cyan-900 text-2xl"> Love from our Clients! </h1>
         {% assign testimonial = site.data.testimonials | where:'product-type','preset'%}
         {% for item in testimonial limit: 1 %}
-
-        <p class="text-xl"> {{item.quote}}</p>
-        <h3> {{item.author}}</h3>
+        <div class="font-featured">
+            <p class="text-xl"> {{item.quote}}</p>
+            <h3> {{item.author}}</h3>
+        </div>
 
         {% endfor %}
     </div>

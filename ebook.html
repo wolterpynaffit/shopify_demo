@@ -8,24 +8,26 @@ layout: default
 {% assign presets = site.products_preset %}
 {% assign featuredPresets = presets | where:'featured','true'%}
 
+<section class="grid grid-cols-2 min-h-80vh pt-36">
 
-<section class="grid grid-cols-2 ">
+    {% for item in featuredPresets limit:1 %}
 
-    {% for item in featuredEbooks limit:1 %}
-
-    <div class="p-2 bg-cover bg-center p-8">
+    <div class="bg-cover bg-center p-8 flex inline-flex">
         <img src="{{item.featured-image}}"></img>
     </div>
 
-    <div class="">
-        <h1> {{item.title}}</h1>
-        <h2 class="text-center pb-4 text-2xl"> INTRO/SALES PITCH: ebook </h2>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+    <div class="p-8 self-center">
+        <h2 class="pb-8 text-center text-cyan-900 font-marker text-2xl"> THIS IS THE FEATURED EBOOKS </h2>
+        <div class="font-featured p-8">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+        </div>
+
         
     </div>
     {% endfor %}
 </section>
+
 <!-- most popular ebooks ------------------------------------->
 
 
@@ -64,21 +66,12 @@ layout: default
 
 <!-- FAQ  Section------------------------------------->
 
-<section class="p-5p text-center bg-sky-200">
-    <h3 class="p-8 text-xl "> Frequently asked questions</h3>
-{% assign faq = site.data.faqs | where: 'type', 'ebook'%}
-{% assign presetFaqs = faqs %}
+<section class="  text-center">
 
-<h2 class="p-2 border-2 grid-cols-12"> EBOOK FAQs</h2>
+<h2 class="p-8 text-cyan-900 
+border-2 grid-cols-12 text-6xl"> Frequently Asked Questions </h2>
 
-{% for item in faq %}
-
-<div class="bg-sky-200 hover:bg-cyan-600">
-    <h3 class="p-8 "> Question: {{item.question}} </h3>
-    <p class="p-8 "> Answer: {{item.answer}}</p>
-</div>
-
-{% endfor %}
+{% include faq-ebook.html %}
 
 </section>
 

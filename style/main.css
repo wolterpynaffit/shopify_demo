@@ -1,7 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
  
+@layer components {
+    .expandButton::after {
+        content: '\02795';
+    }
+    
+    .active::after {
+        content: '\2212';
+    }
+        .expandable {
+            overflow: hidden;
+            max-height: 5rem;
+            transition: .8s;
+        }
+    
+        .collapse {
+            overflow: hidden;
+            max-height: 0;
+            padding: 0;
+            transition: .5s;
+        }
+    
+}
+
 .button {
     @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
 }
+
+
+/* --------------font styles---------- */
+
+h1,h2,h3 {
+    @apply font-marker;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.expandButton::after {
+    content: '\02795';
+}
+
+.active::after {
+    content: '\2212';
+}
+    .expandable {
+        overflow: hidden;
+        max-height: 5rem;
+        transition: .8s;
+    }
+
+    .collapse {
+        overflow: hidden;
+        max-height: 0;
+        padding: 0;
+        transition: .5s;
+    }

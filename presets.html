@@ -2,33 +2,32 @@
 layout: default
 youtube-id: UK23kO7cMeo
 ---
-<!-- this is the presets page -->
+<!-- this is the PRESETS page -->
 
-
-{% assign ebooks = site.products_ebook %}
-{% assign featuredEbooks = ebooks | where:'featured','true'%}
 {% assign presets = site.products_preset %}
 {% assign featuredPresets = presets | where:'featured','true'%}
 
 
-<section class="grid grid-cols-2 gap-4 p-4 bg-stone-200 text-neutral-700">
+<!-- SHOP PAGE: FEATURED PRESET ------------>
+<section class="grid grid-cols-2 min-h-80vh pt-36">
 
-    {% for item in featuredEbooks limit:1 %}
+    {% for item in featuredPresets limit:1 %}
 
-    <div class="bg-cover bg-center">
+    <div class="bg-cover bg-center p-8 flex inline-flex">
         <img src="{{item.featured-image}}"></img>
     </div>
 
-    <div class="grid-col-1">
-        <h1> {{item.title}}</h1>
-        <h2 class="text-center text-2xl">  INTRO/SALES PITCH: presets </h2>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+    <div class="p-8 self-center">
+        <h2 class="pb-8 text-center text-cyan-900 font-marker text-2xl"> THIS IS THE FEATURED PRESET </h2>
+        <div class="font-featured p-8">
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
+        </div>
+
         
     </div>
     {% endfor %}
 </section>
-
 
 
 <!-- most popular presets -->
@@ -36,21 +35,23 @@ youtube-id: UK23kO7cMeo
 
 
 <section class="p-36 gap-6 text-center">
-
-    <h2> Most Popular Presets</h2>
-    {% for item in featuredPresets limit:9%}
-        <div class="grid grid-cols-3">
-            <img src="{{item.featured-image}}"></img>
-            <h2 class="text xl"> {{item.title}}</h2>
-            <p> {{item.price}}</p>
-        </div>
-        {% endfor %}
+    <h2 class = 'p-16 font-marker text-4xl text-cyan-900'> Most Popular Presets</h2>
+    <div class=" grid grid-cols-3">
+        {% for item in featuredPresets limit:9%}
+            <div class="grid p-4 font-featured">
+                <img src="{{item.featured-image}}"></img>
+                <h2 class="text-xl  pt-5 text-cyan-900"> {{item.title}}</h2>
+                <p> {{item.price}}</p>
+            </div>
+            {% endfor %}
+    </div>
+  
     </section>
 
 <!-- this is the before and after gallery --------->
 
 
-<section class="p-36 gap-6">
+<section class=" grid grid-cols-3 p-36 gap-6 bg-stone-200">
     <div>
         {% for item in featuredPresets limit:3 %}
         <a href="#" class="text xl"> {{item.title}} </a>
@@ -71,7 +72,7 @@ youtube-id: UK23kO7cMeo
 
 <!-- this is a video showing how to use presets -->
 
-<section class="relative flex place-content-center">
+<section class="relative flex place-content-center p-36">
     <div class="plyr__video-embed" id="player">
         <iframe width="1000" height="600"
         src="https://www.youtube.com/embed/{{ page.youtube-id }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"allowfullscreenallowtransparency
@@ -84,20 +85,20 @@ youtube-id: UK23kO7cMeo
 
 <!-- testimonials -->
 
-<section class= "py-36 text-center">
+<section class= "p-36 text-center">
     <div>
-        <h1 class= "pb-8 text-2xl"> Love from our Clients! </h1>
-        {% assign testimonial = site.data.testimonials | where: 'product-type', 'preset' %}
-        
+        <h1 class= "pb-8 text-2xl text-cyan-900 text-2xl"> Love from our Clients! </h1>
+        {% assign testimonial = site.data.testimonials | where:'product-type','preset'%}
         {% for item in testimonial limit: 1 %}
-        
-        <p class="text-xl"> {{item.quote}}</p>
-        <h3> {{item.author}}</h3>
-        
+        <div class="font-featured">
+            <p class="text-xl"> {{item.quote}}</p>
+            <h3> {{item.author}}</h3>
+        </div>
+
         {% endfor %}
-        
     </div>
 </section>
+
 
 
 
@@ -133,7 +134,7 @@ youtube-id: UK23kO7cMeo
 
     {% for item in faq %}
 
-    <div class="bg-sky-200 hover:bg-cyan-600">
+    <div class="bg-sky-200 hover:bg-cyan-600 leading-3 tracking-wide">
         <h3 class="p-8 "> Question: {{item.question}} </h3>
         <p class="p-8 "> Answer: {{item.answer}}</p>
     </div>

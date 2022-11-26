@@ -1,11 +1,11 @@
----
+<!-- ---
 layout: default
 ---
 
 <section class="p-5p text-center">
     <h3 class=""> Frequently asked questions</h3>
     
-<!-- General FAQ loop --------------->
+-- General FAQ loop ---------------
 {% assign faq = site.data.faqs %}
 {% assign generalFaqs - faqs | where: 'type', general'%}
 
@@ -16,7 +16,7 @@ layout: default
 <div>
     <h3> {{item.question}} </h3>
     <p> {{item.answer}}</p>
-</div>
+</div>s
 
 {% endfor %}
 </section>
@@ -25,7 +25,7 @@ layout: default
 <section class="p-5p text-center">
     <h3 class=""> Frequently asked questions</h3>
     
-<!--  PRESET FAQ loop --------------->
+--  PRESET FAQ loop ---------------
 {% assign faq = site.data.faqs %}
 {% assign presetFaqs - faqs | where: 'type', preset'%}
 
@@ -48,7 +48,7 @@ layout: default
 <section class="p-5p text-center">
     <h3 class=""> Frequently Asked Questions</h3>
     
-<!-- EBOOK FAQ loop --------------->
+-- EBOOK FAQ loop ---------------
 {% assign faq = site.data.faqs %}
 {% assign ebookFaqs - faqs | where: 'type', ebook'%}
 
@@ -63,4 +63,5 @@ layout: default
 
 {% endfor %}
 
-</section>
+</section> -->
+ 
