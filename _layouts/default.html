@@ -12,7 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">    
-   
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- slick  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="{{ '/dist/main.css' | relative_url }}">
     <title>{{page.title}}</title>
@@ -42,12 +50,12 @@
    
 
     <!-- FOOTER: this is where we will have an includes to link the header information  -->
-    <footer class="grid grid-cols-2 p-16 border-t-2 border-stone-400" >
-     <h1 class="self-center uppercase tracking-wider p-12 text-7xl flex align-center text-cyan-900"> logo</h1>
-     <nav class="p-4 font-featured self-center">
-        <a href="/shop" class="p-8 m-8  hover:text-cyan-600"> Home </a>
-        <a href="/presets.html" class="p-8 m-8  hover:text-cyan-600"> Presets</a>
-        <a href="/ebook.html" class="p-8 m-8  hover:text-cyan-600"> Ebooks </a>
+    <footer class="grid grid-cols-2 p-16 border-t-2 min-h-50vh bg-cyan-900 border-stone-400" >
+     <h1 class="self-center uppercase tracking-wider p-12 text-7xl flex align-center text-zinc-50"> logo</h1>
+     <nav class="p-4 text-zinc-50 font-featured self-center">
+        <a href="/shop" class="p-8 m-8  hover:text-zinc-50"> Home </a>
+        <a href="/presets.html" class="p-8 m-8  hover:text-zinc-50"> Presets</a>
+        <a href="/ebook.html" class="p-8 m-8  hover:text-zinc-50"> Ebooks </a>
         <a href="#" class="p-8 m-8  hover:text-cyan-600"> About</a>
     </nav>
 
@@ -65,7 +73,14 @@
         </script>
 
 <!-- links javascript js for accordian function etc.  -->
-        <script src="/main.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- this is the JQUERY cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- this is the slick slider cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- this is the javascript to enable accordian styles etc -->
+    <script src="/main.js"></script>
 </body>
 
 </html>

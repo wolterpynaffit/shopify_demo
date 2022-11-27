@@ -33,11 +33,32 @@ youtube-id: UK23kO7cMeo
 <!-- most popular presets -->
 
 
+<section class="justify-center align-center  flex p-28 pt-80 ">
+    <h2 class = 'font-marker text-9xl text-cyan-900  flex items-center p-16'> Most Popular Presets</h2>
+    <div class=" grid grid-cols-3 gap-2">
+        {% for item in featuredPresets limit:3%}
 
-<section class="p-36 gap-6 text-center">
+        <!-- this loop animates the presets on scroll -->
+        <div class="border-zinc-500 text-cyan-900  text-center flex flex-col " 
+            {% if forloop.index == 1 %} data-aos="fade-up"
+            {% elsif forloop.index == 2 %} data-aos="fade-right" data-aos-delay="300"
+            {% else %} data-aos="fade-right" data-aos-delay="600"
+        {% endif %}>
+        
+            <img src="{{item.featured-image}}" class="min-h-80vh object-cover "></img>
+            <h2 class="text-xl pt-8"> {{item.title}}</h2>
+            <p> {{item.price}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+<!-- <section class="p-36 gap-6 text-center">
     <h2 class = 'p-16 font-marker text-4xl text-cyan-900'> Most Popular Presets</h2>
     <div class=" grid grid-cols-3">
-        {% for item in featuredPresets limit:9%}
+        {% for item in featuredPresets limit:3%}
             <div class="grid p-4 font-featured">
                 <img src="{{item.featured-image}}"></img>
                 <h2 class="text-xl  pt-5 text-cyan-900"> {{item.title}}</h2>
@@ -46,12 +67,13 @@ youtube-id: UK23kO7cMeo
             {% endfor %}
     </div>
   
-    </section>
+    </section> -->
 
 <!-- this is the before and after gallery --------->
 
 
-<section class=" grid grid-cols-3 p-36 gap-6 bg-stone-200">
+<section class=" grid grid-cols-3 p-36 gap-6 bg-light">
+    <h1> Before & After </h1>
     <div>
         {% for item in featuredPresets limit:3 %}
         <a href="#" class="text xl"> {{item.title}} </a>
@@ -88,16 +110,22 @@ youtube-id: UK23kO7cMeo
 <section class= "p-36 text-center">
     <div>
         <h1 class= "pb-8 text-2xl text-cyan-900 text-2xl"> Love from our Clients! </h1>
+        <div class="slider-container">
+
+
         {% assign testimonial = site.data.testimonials | where:'product-type','preset'%}
-        {% for item in testimonial limit: 1 %}
-        <div class="font-featured">
+        {% for item in testimonial limit: 3%}
+        <div class="font-featured slider-item p-8">
             <p class="text-xl"> {{item.quote}}</p>
             <h3> {{item.author}}</h3>
         </div>
-
         {% endfor %}
+        </div>
     </div>
 </section>
+
+
+
 
 
 
@@ -124,25 +152,16 @@ youtube-id: UK23kO7cMeo
 
 </section> -->
 
+<section class=" text-center">
 
-<section class="p-5p text-center bg-sky-200">
-    <h3 class="p-8 text-xl "> Frequently asked questions</h3>
-{% assign faq = site.data.faqs | where: 'type', 'preset'%}
-{% assign presetFaqs = faqs %}
-
-<h2 class="p-2 border-2 grid-cols-12"> PRESET FAQs</h2>
-
-    {% for item in faq %}
-
-    <div class="bg-sky-200 hover:bg-cyan-600 leading-3 tracking-wide">
-        <h3 class="p-8 "> Question: {{item.question}} </h3>
-        <p class="p-8 "> Answer: {{item.answer}}</p>
-    </div>
-
-    {% endfor %}
-
-    </section>
-
+    <h2 class="p-8 text-cyan-900 
+    border-2 grid-cols-12 text-2xl"> Frequently Asked Questions </h2>
+    
+    {% include faq-ebook.html %}
+    
+</section>
+    
+    
 
 
 

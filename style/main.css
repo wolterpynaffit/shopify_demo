@@ -62,3 +62,24 @@ h1,h2,h3 {
         padding: 0;
         transition: .5s;
     }
+
+/* ----------------SLICK SLIDER STYLES ------------ */
+/* IF USING ARROWS ON SLIDER USE THESE CLASSES */
+
+.slick-prev {
+    left: 0px;
+}
+
+.slick-next::before, .slick-prev::before{
+    opacity: .55;
+    color: rgb(12, 74, 110)
+}
+
+/* SLICK DOTS STYLE */
+
+.slick-next {
+    right: 0px;
+    color: 
+}
+
+

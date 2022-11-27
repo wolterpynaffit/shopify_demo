@@ -17,7 +17,7 @@ layout: default
     </div>
 
     <div class="p-8 self-center">
-        <h2 class="pb-8 text-center text-cyan-900 font-marker text-2xl"> THIS IS THE FEATURED EBOOKS </h2>
+        <h2 class="pb-8 text-center text-cyan-900 font-marker text-2xl"> THIS IS THE FEATURED EBOOK </h2>
         <div class="font-featured p-8">
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi laborum temporibus debitis, voluptates perspiciatis odit cupiditate aliquid aliquam officiis praesentium vero unde deleniti iste enim porro iure? Laboriosam, odit.</p>
@@ -31,16 +31,46 @@ layout: default
 <!-- most popular ebooks ------------------------------------->
 
 
-<section class="grid grid-cols-3 p-8 gap-6">
-{% for item in featuredEbooks limit:9%}
-
-    <div>
-        <img src="{{item.featured-image}}"></img>
-        <h2 class="text xl"> {{item.title}}</h2>
-        <p> {{item.price}}</p>
+<section class="justify-center align-center  flex p-28 pt-80 ">
+    <h2 class = 'font-marker text-9xl text-cyan-900  flex items-center p-16'> Most Popular Ebooks</h2>
+    <div class=" grid grid-cols-3 gap-2">
+        {% for item in featuredEbooks limit:3%}
+        <div class="border-zinc-500 text-cyan-900  text-center flex flex-col " 
+            {% if forloop.index == 1 %} data-aos="fade-up"
+            {% elsif forloop.index == 2 %} data-aos="fade-right" data-aos-delay="300"
+            {% else %} data-aos="fade-right" data-aos-delay="600"
+        {% endif %}>
+        
+            <img src="{{item.featured-image}}" class="min-h-80vh object-cover "></img>
+            <h2 class="text-xl pt-8"> {{item.title}}</h2>
+            <p> {{item.price}}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </section>
+
+
+
+
+<!-- <section class="p-36 gap-6 text-center">
+    
+    <div class=" grid grid-cols-3">
+        {% for item in featuredPresets limit:3%}
+            <div class="grid p-4 font-featured">
+                <img src="{{item.featured-image}}"></img>
+                <h2 class="text-xl  pt-5 text-cyan-900"> {{item.title}}</h2>
+                <p> {{item.price}}</p>
+            </div>
+            {% endfor %}
+    </div>
+  
+    </section> -->
+
+
+<!--  <
+    p><a href="https://www.Youtube.com/"><img src="https://www.tutorialspoint.com/assets/questions/media/426142-1668760872.png" style="width:50px;height:50px;"></a></p>
+</body>
+ -->
 
 <!-- sneak  peak ------------------------------------->
 
@@ -50,26 +80,33 @@ layout: default
 
 <!-- testimonials ------------------------------------->
 
-<section class= "py-36 text-center">
+<section class= "p-36 text-center bg-light">
     <div>
-        <h1 class= "text-2xl pb-8"> Love from our Clients! </h1>
+        <h1 class= "pb-8 text-2xl text-cyan-900 text-2xl"> Love from our Clients! </h1>
+        <div class="slider-container">
+
+
         {% assign testimonial = site.data.testimonials | where:'product-type','preset'%}
-        {% for item in testimonial limit: 1 %}
-
-        <p class="text-xl"> {{item.quote}}</p>
-        <h3> {{item.author}}</h3>
-
+        {% for item in testimonial limit: 3%}
+        <div class="font-featured slider-item p-16">
+            <p class="text-xl"> {{item.quote}}</p>
+            <h3> {{item.author}}</h3>
+        </div>
         {% endfor %}
+        </div>
     </div>
 </section>
 
 
+
+
+
 <!-- FAQ  Section------------------------------------->
 
-<section class="  text-center">
+<section class=" text-center pl-16 pr-16 pt-36 pb-36">
 
 <h2 class="p-8 text-cyan-900 
-border-2 grid-cols-12 text-6xl"> Frequently Asked Questions </h2>
+borde grid-cols-12 text-2xl"> Frequently Asked Questions </h2>
 
 {% include faq-ebook.html %}
 

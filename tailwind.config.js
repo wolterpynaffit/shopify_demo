@@ -2,7 +2,8 @@ module.exports = {
   content: [
     './_includes/**/*.{html,md}',
     './_layouts/**/*.{html,md}',
-    './_*/*.{html,md}',
+    './_*/**/*.{html,md}',
+    '!./_site/**/*.{html,md}',
     './*.{html,md}'
   ],
   theme: {
@@ -23,8 +24,8 @@ module.exports = {
       '80vh': '80vh'
       },
     colors: {
-      'dark': 'rgb(400, 399, 203);',
-      'light': 'gb(400, 399, 203)',
+      'dark': 'rgb(12, 74, 110);',
+      'light': 'rgb(205,221,224);',
       'featured': 'rgb(400, 399, 203)',
     },
   },

@@ -7,13 +7,14 @@
 {% for item in faq %}
 
     <div class="">
-        <button class="expandButton flex justify-between expandButton p-6 bg-stone-100 cursor-pointer w-full hover:bg-stone-200" data-target-button="{{forloop.index}}">
+        <button class="expandButton flex justify-between expandButton p-8 bg-stone-100 cursor-pointer w-full hover:bg-stone-200" data-target-button="{{forloop.index}}">
             
-            <h3 class="font-featured text-5xl"> {{item.question}} </h3>
-
+            <h3 class="font-featured text-2xl"> {{item.question}} </h3>
         </button>
+
+
         <div class="expandable collapse" data-target-more="{{forloop.index}}">
-            <p> {{item.answer}}</p>
+            <p class="text-xl p-8"> {{item.answer}}</p>
         </div>
         
     </div>
