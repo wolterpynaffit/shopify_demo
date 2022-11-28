@@ -3,14 +3,14 @@ layout: default
 ---
 <!-- this is the ebook page ---------------------------->
 
+
 {% assign ebooks = site.products_ebook %}
 {% assign featuredEbooks = ebooks | where:'featured','true'%}
-{% assign presets = site.products_preset %}
-{% assign featuredPresets = presets | where:'featured','true'%}
+
 
 <section class="grid grid-cols-2 min-h-80vh pt-36">
 
-    {% for item in featuredPresets limit:1 %}
+    {% for item in featuredEbooks limit:1 %}
 
     <div class="bg-cover bg-center p-8 flex inline-flex">
         <img src="{{item.featured-image}}"></img>
@@ -34,11 +34,12 @@ layout: default
 <section class="justify-center align-center  flex p-28 pt-80 ">
     <h2 class = 'font-marker text-9xl text-cyan-900  flex items-center p-16'> Most Popular Ebooks</h2>
     <div class=" grid grid-cols-3 gap-2">
+
         {% for item in featuredEbooks limit:3%}
-        <div class="border-zinc-500 text-cyan-900  text-center flex flex-col " 
+        <div class="border-zinc-500 text-cyan-900  text-center flex flex-col hover:bg-gray-700 " 
             {% if forloop.index == 1 %} data-aos="fade-up"
-            {% elsif forloop.index == 2 %} data-aos="fade-right" data-aos-delay="300"
-            {% else %} data-aos="fade-right" data-aos-delay="600"
+            {% elsif forloop.index == 2 %} data-aos="fade-right" data-aos-delay="450"
+            {% else %} data-aos="fade-right" data-aos-delay="900"
         {% endif %}>
         
             <img src="{{item.featured-image}}" class="min-h-80vh object-cover "></img>
@@ -86,7 +87,7 @@ layout: default
         <div class="slider-container">
 
 
-        {% assign testimonial = site.data.testimonials | where:'product-type','preset'%}
+        {% assign testimonial = site.data.testimonials | where:'product-type','ebook'%}
         {% for item in testimonial limit: 3%}
         <div class="font-featured slider-item p-16">
             <p class="text-xl"> {{item.quote}}</p>
@@ -111,4 +112,7 @@ borde grid-cols-12 text-2xl"> Frequently Asked Questions </h2>
 {% include faq-ebook.html %}
 
 </section>
+
+
+
 

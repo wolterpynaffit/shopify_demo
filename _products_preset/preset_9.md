@@ -1,5 +1,5 @@
 ---
-layout: preset
+layout: indie_preset
 title: preset 9
 featured-image: assets/images/placeholder.jpeg
 color-image: assets/images/presets-placeholder.jpeg

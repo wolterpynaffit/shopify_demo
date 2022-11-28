@@ -1,6 +1,6 @@
 ---
 layout: default
-youtube-id: UK23kO7cMeo
+youtube-id: E9Mcmcm0ADo
 ---
 <!-- this is the PRESETS page -->
 
@@ -34,30 +34,39 @@ youtube-id: UK23kO7cMeo
 
 
 <section class="justify-center align-center  flex p-28 pt-80 ">
-    <h2 class = 'font-marker text-9xl text-cyan-900  flex items-center p-16'> Most Popular Presets</h2>
+    <h2 class = 'font-marker text-4xl lg:text-9xl  text-cyan-900  flex items-center p-16'> Most Popular Presets</h2>
+    
     <div class=" grid grid-cols-3 gap-2">
         {% for item in featuredPresets limit:3%}
-
+        <a href="{{item.url}}">
         <!-- this loop animates the presets on scroll -->
-        <div class="border-zinc-500 text-cyan-900  text-center flex flex-col " 
+        <div class="border-zinc-500 text-cyan-900 relative text-center flex flex-col " 
             {% if forloop.index == 1 %} data-aos="fade-up"
             {% elsif forloop.index == 2 %} data-aos="fade-right" data-aos-delay="300"
             {% else %} data-aos="fade-right" data-aos-delay="600"
         {% endif %}>
-        
+        <!--  end of animation  -->
             <img src="{{item.featured-image}}" class="min-h-80vh object-cover "></img>
+            <div class="hover:bg-cyan-900/40 absolute inset-0 rounded-b-full">   </div>
             <h2 class="text-xl pt-8"> {{item.title}}</h2>
-            <p> {{item.price}}</p>
+            <p class="pb-8"> {{item.price}}</p>
+            
+
         </div>
+  
+    </a>
         {% endfor %}
-    </div>
+</div>
+
+
+   
 </section>
 
 
 
-<!-- <section class="p-36 gap-6 text-center">
+<section class="p-36 gap-6 text-center">
     <h2 class = 'p-16 font-marker text-4xl text-cyan-900'> Most Popular Presets</h2>
-    <div class=" grid grid-cols-3">
+    <div class="grid grid-cols-3">
         {% for item in featuredPresets limit:3%}
             <div class="grid p-4 font-featured">
                 <img src="{{item.featured-image}}"></img>
@@ -67,30 +76,38 @@ youtube-id: UK23kO7cMeo
             {% endfor %}
     </div>
   
-    </section> -->
+    </section>
 
 <!-- this is the before and after gallery --------->
 
 
-<section class=" grid grid-cols-3 p-36 gap-6 bg-light">
-    <h1> Before & After </h1>
-    <div>
-        {% for item in featuredPresets limit:3 %}
-        <a href="#" class="text xl"> {{item.title}} </a>
-        {% endfor %}
-    </div>
-    <div>
-        {% for item in featuredPresets limit:3 %}
-        <img src="{{item.bw-image}}"></img>
-        {% endfor %}
-    </div>
-    <div>
-        {% for item in featuredPresets limit:3 %}
-        <img src="{{item.color-image}}"></img>
-        {% endfor %}
-    </div>     
-        
-</section>
+    <section class="font-marker">
+        <div class='ba-container'>
+          <div class='ba-img ba-background-img relative'>
+            <div class="pl-[55vw] align-text-top">
+                <p class="p-16 text-3xl">a<br>f<br>t<br>e<br>r</p>
+            </div>
+          </div>
+          <div class='ba-img ba-foreground-img relative overflow-hidden'>
+            <div class="pl-[55vw] align-text-top p-16 text-3xl text-red-50">
+                <p>b<br>e<br>f<br>o<br>r<br>e</p>
+            </div>
+       
+          </div>
+          <input type="range" min="1" max="100" value="50" class="ba-slider" name='ba-slider' id="ba-slider">
+          <div class='ba-slider-button font-marker text-cyan-900 text-4xl '>
+              
+
+          </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
 
 <!-- this is a video showing how to use presets -->
 
@@ -130,6 +147,8 @@ youtube-id: UK23kO7cMeo
 
 
 
+
+
     
 
 <!--  PRESET FAQ loop --------------->
@@ -160,6 +179,8 @@ youtube-id: UK23kO7cMeo
     {% include faq-ebook.html %}
     
 </section>
+
+
     
     
 

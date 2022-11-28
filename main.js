@@ -40,5 +40,16 @@ $('.slider-container').slick({
 });
 
 
-
+// this is for the APPEAR on scroll commands 
   AOS.init();
+
+
+// this is for the before and after galler slide 
+
+  $("#ba-slider").on("input change", (e)=>{
+    const sliderPos = e.target.value;
+    // Update the width of the foreground image
+    $('.ba-foreground-img').css('width', `${sliderPos}%`)
+    // Update the position of the slider button
+    $('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`)
+  });
