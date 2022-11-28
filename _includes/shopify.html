@@ -1,7 +1,6 @@
----
-layout: default
----
-
+<div>
+  <div id='product-component-{{page.shopifyid}}'></div>
+</div>
 <script type="text/javascript">
     /*<![CDATA[*/
     (function () {
@@ -30,7 +29,7 @@ layout: default
         ShopifyBuy.UI.onReady(client).then(function (ui) {
           ui.createComponent('product', {
             id: '{{page.shopifyid}}',
-            node: document.getElementById('product-component-1669538393675'),
+            node: document.getElementById('product-component-{{page.shopifyid}}'),
             moneyFormat: '%E2%82%A9%7B%7Bamount_no_decimals%7D%7D',
             options: {
       "product": {
